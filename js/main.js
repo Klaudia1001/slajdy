@@ -31,19 +31,25 @@ $(function () {
         
     function slide(newSlideIndex) {
         console.log(newSlideIndex);
-        
-        if(newSlideIndex < 0 || newSlideIndex >=slideCount){
+        if(newSlideIndex < 0 || newSlideIndex >= slideCount ){
             return;
         }
+        var marginLeft = (newSlideIndex * (-100)) + "%";
         
-        var marginLeft = (newSlideIndex * (-100)) + "%");
+         /*wywołanie animacji na elemencie slideShow, która przesunie go w lewy magines równy zmiennej marginLeft*/
+         slideShow.animate({"marginLeft" : marginLeft}, 800,function () {
+             slideIndex = newSlideIndex;
+         });
+    }
+});
         
-        /*wywołanie animacji na elemencie slideShow, która przesunie go w lewy magines równy zmiennej marginLeft*/
-        $(function slide-show() {
-            
-        }
+
+
         
-    });
+     
+  
+        
+
 
 
     
