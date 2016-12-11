@@ -34,16 +34,22 @@ $(function () {
         if(newSlideIndex < 0 || newSlideIndex >= slideCount ){
             return;
         }
+        
+        var napisPoprzedzajacy = $ (".slider-caption").eq(newSlideIndex);
+        
+        napisPoprzedzajacy.hide ();
+        
         var marginLeft = (newSlideIndex * (-100)) + "%";
         
          /*wywołanie animacji na elemencie slideShow, która przesunie go w lewy magines równy zmiennej marginLeft*/
          slideShow.animate({"marginLeft" : marginLeft}, 800,function () {
-             slideIndex = newSlideIndex;
+             slideIndex = newSlideIndex
+             napisPoprzedzajacy.fadeIn('slow');
          });
+ 
     }
 });
         
-
 
         
      
